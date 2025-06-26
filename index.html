@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Club - Power Up Your Future!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🍄 STEM CLUB</h1>
+                <nav class="nav">
+                    <button class="nav-btn active" data-world="about">ABOUT</button>
+                    <button class="nav-btn" data-world="events">EVENTS</button>
+                    <button class="nav-btn" data-world="projects">PROJECTS</button>
+                    <button class="nav-btn" data-world="join">JOIN US</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Game World Container -->
+        <main class="world-container">
+            <!-- About World -->
+            <div class="world active" id="about-world">
+                <div class="world-title">
+                    <h2>🏰 WELCOME TO STEM KINGDOM</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card power-up">
+                        <div class="card-icon">🔬</div>
+                        <h3>Science Power</h3>
+                        <p>Discover the secrets of the universe through hands-on experiments and research projects!</p>
+                    </div>
+                    <div class="card power-up">
+                        <div class="card-icon">⚙️</div>
+                        <h3>Tech Mastery</h3>
+                        <p>Level up your coding skills with Python, JavaScript, and cutting-edge technologies!</p>
+                    </div>
+                    <div class="card power-up">
+                        <div class="card-icon">🔧</div>
+                        <h3>Engineering Quest</h3>
+                        <p>Build robots, design solutions, and create the future with your own hands!</p>
+                    </div>
+                    <div class="card power-up">
+                        <div class="card-icon">📊</div>
+                        <h3>Math Magic</h3>
+                        <p>Unlock the power of numbers to solve real-world problems and challenges!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events World -->
+            <div class="world" id="events-world">
+                <div class="world-title">
+                    <h2>🎮 UPCOMING QUESTS</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card event-card">
+                        <div class="card-header">
+                            <span class="date">JAN 15</span>
+                            <span class="level">LVL 1</span>
+                        </div>
+                        <h3>Robotics Tournament</h3>
+                        <p>Battle royale with custom-built robots! Beginners welcome.</p>
+                    </div>
+                    <div class="card event-card">
+                        <div class="card-header">
+                            <span class="date">FEB 03</span>
+                            <span class="level">LVL 2</span>
+                        </div>
+                        <h3>Hackathon Challenge</h3>
+                        <p>48-hour coding marathon to solve community problems!</p>
+                    </div>
+                    <div class="card event-card">
+                        <div class="card-header">
+                            <span class="date">FEB 20</span>
+                            <span class="level">LVL 1</span>
+                        </div>
+                        <h3>Science Fair Prep</h3>
+                        <p>Get your experiments ready for the big competition!</p>
+                    </div>
+                    <div class="card event-card">
+                        <div class="card-header">
+                            <span class="date">MAR 10</span>
+                            <span class="level">LVL 3</span>
+                        </div>
+                        <h3>AI Workshop</h3>
+                        <p>Dive into machine learning and neural networks!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects World -->
+            <div class="world" id="projects-world">
+                <div class="world-title">
+                    <h2>🏆 ACHIEVEMENT SHOWCASE</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card project-card">
+                        <div class="project-status completed">COMPLETED</div>
+                        <h3>Weather Station Bot</h3>
+                        <p>IoT device that monitors local weather and posts updates to social media!</p>
+                        <div class="tech-stack">Python • Arduino • APIs</div>
+                    </div>
+                    <div class="card project-card">
+                        <div class="project-status in-progress">IN PROGRESS</div>
+                        <h3>VR Chemistry Lab</h3>
+                        <p>Virtual reality experience for safe chemistry experiments!</p>
+                        <div class="tech-stack">Unity • C# • VR</div>
+                    </div>
+                    <div class="card project-card">
+                        <div class="project-status completed">COMPLETED</div>
+                        <h3>Mars Rover Simulator</h3>
+                        <p>Control a virtual rover on Mars terrain using real NASA data!</p>
+                        <div class="tech-stack">JavaScript • WebGL • APIs</div>
+                    </div>
+                    <div class="card project-card">
+                        <div class="project-status planning">PLANNING</div>
+                        <h3>Smart Garden System</h3>
+                        <p>Automated plant care system with sensors and mobile app!</p>
+                        <div class="tech-stack">React Native • IoT • ML</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join World -->
+            <div class="world" id="join-world">
+                <div class="world-title">
+                    <h2>🌟 JOIN THE ADVENTURE</h2>
+                </div>
+                <div class="cards-grid join-grid">
+                    <div class="card join-card">
+                        <div class="card-icon">👾</div>
+                        <h3>Player Benefits</h3>
+                        <ul class="benefits-list">
+                            <li>Weekly coding workshops</li>
+                            <li>Access to 3D printers & robots</li>
+                            <li>Scholarship opportunities</li>
+                            <li>Industry mentorship</li>
+                            <li>Competition team spots</li>
+                        </ul>
+                    </div>
+                    <div class="card contact-card">
+                        <h3>Ready to Start?</h3>
+                        <div class="contact-info">
+                            <p><strong>📧 Email:</strong> stemclub@school.edu</p>
+                            <p><strong>📍 Location:</strong> Room 205, Science Building</p>
+                            <p><strong>🕒 Meetings:</strong> Tuesdays 3:30 PM</p>
+                        </div>
+                        <button class="join-btn">PRESS START TO JOIN!</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="stats">
+                <span class="stat">MEMBERS: 42</span>
+                <span class="stat">PROJECTS: 15</span>
+                <span class="stat">AWARDS: 8</span>
+            </div>
+            <p>&copy; 2025 STEM Club - Powered by Curiosity 🚀</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

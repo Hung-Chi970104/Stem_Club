@@ -1,0 +1,405 @@
+/* Import pixelated font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(135deg, #000000 0%, #1a0000 50%, #000000 100%);
+    min-height: 100vh;
+    color: white;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(90deg, #ff0000 0%, #cc0000 50%, #ff0000 100%);
+    border-bottom: 4px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 0px #000000;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: #000000;
+    color: white;
+    border: 2px solid #ffffff;
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.nav-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn.active {
+    background: #ff0000;
+    border-color: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* World Container */
+.world-container {
+    flex: 1;
+    padding: 2rem;
+}
+
+.world {
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+.world.active {
+    display: block;
+}
+
+.world-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.world-title h2 {
+    font-size: 1.2rem;
+    color: #ff0000;
+    text-shadow: 2px 2px 0px #000000;
+    margin-bottom: 0.5rem;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.join-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 800px;
+}
+
+/* Base Card Styles */
+.card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    border: 3px solid #000000;
+    color: #000000;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 4px 4px 0px #000000;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0px #000000, 0 8px 16px rgba(255, 0, 0, 0.3);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ff0000, #000000, #ff0000, #000000);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 0.1;
+}
+
+/* Power Up Cards */
+.power-up {
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    color: #333333;
+}
+
+/* Event Cards */
+.event-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.date {
+    background: #ff0000;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.5rem;
+    border: 2px solid #000000;
+}
+
+.level {
+    background: #000000;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.5rem;
+    border: 2px solid #ff0000;
+}
+
+/* Project Cards */
+.project-status {
+    position: absolute;
+    top: -10px;
+    right: 1rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.5rem;
+    border: 2px solid #000000;
+    text-transform: uppercase;
+}
+
+.project-status.completed {
+    background: #00ff00;
+    color: #000000;
+}
+
+.project-status.in-progress {
+    background: #ffff00;
+    color: #000000;
+}
+
+.project-status.planning {
+    background: #ff0000;
+    color: white;
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #000000;
+    color: #ff0000;
+    font-size: 0.5rem;
+    text-align: center;
+    border: 1px solid #ff0000;
+}
+
+/* Join Cards */
+.join-card, .contact-card {
+    text-align: left;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.benefits-list li {
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1rem;
+    color: #333333;
+}
+
+.benefits-list li::before {
+    content: '⭐';
+    position: absolute;
+    left: 0;
+}
+
+.contact-info {
+    margin: 1rem 0;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    font-size: 0.6rem;
+}
+
+.join-btn {
+    background: #ff0000;
+    color: white;
+    border: 3px solid #000000;
+    padding: 1rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.join-btn:hover {
+    background: #000000;
+    border-color: #ff0000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+}
+
+/* Footer */
+.footer {
+    background: #000000;
+    border-top: 3px solid #ff0000;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: #ff0000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffffff;
+    font-size: 0.6rem;
+}
+
+.footer p {
+    font-size: 0.5rem;
+    color: #cccccc;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav {
+        justify-content: center;
+    }
+    
+    .nav-btn {
+        font-size: 0.5rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .world-container {
+        padding: 1rem;
+    }
+    
+    .world-title h2 {
+        font-size: 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .card h3 {
+        font-size: 0.7rem;
+    }
+    
+    .card p {
+        font-size: 0.55rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header, .footer {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+}
